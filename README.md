@@ -80,6 +80,7 @@ $129 for a team of up to ten.
 | Share cards      | One default image                           | Drawn per piece at build time                                  |
 | Integrations     | Analytics (Plausible, GA4)                  | + newsletter (Buttondown, Kit), giscus comments                |
 | License          | MIT                                         | Commercial, unlimited end products                             |
+| Footer credit    | One line, easy to remove                    | None                                                           |
 | Support          | GitHub Issues                               | Email (im@ondelva.com), 2 business days                        |
 
 ## Screenshots

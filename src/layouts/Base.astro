@@ -15,6 +15,7 @@ import { fmt, useT } from '../i18n/t';
 type Props = ComponentProps<typeof SEO> & { nameplate?: boolean };
 const { nameplate = true, ...seoProps } = Astro.props;
 const year = new Date().getFullYear();
+const themeRepo = 'https://github.com/ondelva/astro-theme-gazette';
 const t = useT();
 ---
 
@@ -125,7 +126,11 @@ const t = useT();
         )}
       </div>
       <p class="max-w-wide font-ui text-muted mx-auto px-4 pb-10 text-xs">
-        &copy; {year} {site.name}. {fmt(t.editedBy, { name: site.author })}.
+        &copy; {year} {site.name}. {fmt(t.editedBy, { name: site.author })}.{' '}
+        <a href={themeRepo} class="hover:text-foreground underline">
+          Gazette
+        </a>{' '}
+        theme by Ondelva.
       </p>
     </footer>
   </body>

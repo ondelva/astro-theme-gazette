@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.3] - 2026-09-21
+
+### Added
+
+- The footer carries one line crediting the theme, linking to its repository. Delete it if you
+  would rather not have it — `docs/customization.md` says where. The Pro edition ships without it.
+
+### Fixed
+
+- The Lighthouse config listed only demo pages, so deleting one failed CI with a 404 that reads
+  like a performance problem. `lighthouserc.cjs` now filters the list down to the pages that are
+  actually there; restore a page and it is measured again.
+
 ## [1.1.2] - 2026-09-21
 
 ### Fixed

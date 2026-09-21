@@ -18,6 +18,12 @@ to open a component for any of the changes below.
 - `defaultOgImage` — the share card, `public/og-default.png`. Replace the file, or point this
   at your own 1200×630 image.
 
+## Footer credit
+
+The footer carries one line crediting the theme: `Gazette theme by Ondelva`, linking to the
+theme repository. It is a plain link in `src/layouts/Base.astro` — delete it if you would rather not have it.
+Keeping it is how other people find the theme. Gazette Pro ships without it.
+
 ## Navigation, footer and social links
 
 `src/config.ts`, the `nav` object:
