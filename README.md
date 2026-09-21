@@ -3,7 +3,7 @@
 A weekly magazine theme for Astro, published in issues: a cover, a contents page, and room for the
 long pieces. Free and MIT-licensed.
 
-[Live demo](https://gazette-free.ondelva.com) · [Pro demo](https://gazette.ondelva.com)
+[Live demo](https://gazette-free.ondelva.com) · [Pro demo](https://gazette.ondelva.com) · [Get Pro](https://buy.polar.sh/polar_cl_k3KWUTP5hbFrrZRv5XnFIFYA2yR4ecBVxcu2d2wDLvz)
 
 ![Gazette: the cover and the contents of an issue](docs/screenshots/home-light.png)
 
@@ -60,7 +60,8 @@ See [docs/deploy.md](docs/deploy.md).
 ## Free vs Pro
 
 Gazette Pro is the same magazine with the reading apparatus around it. See it running at
-[gazette.ondelva.com](https://gazette.ondelva.com).
+[gazette.ondelva.com](https://gazette.ondelva.com), and [buy it here](https://buy.polar.sh/polar_cl_k3KWUTP5hbFrrZRv5XnFIFYA2yR4ecBVxcu2d2wDLvz) — $49 for one person,
+$129 for a team of up to ten.
 
 |                  | Free (this repo)                            | Pro                                                            |
 | ---------------- | ------------------------------------------- | -------------------------------------------------------------- |

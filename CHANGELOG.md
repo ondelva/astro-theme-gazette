@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.1] - 2026-09-21
+
+### Added
+
+- A purchase link for Gazette Pro in the README, next to the demos and in the Free vs Pro section.
+
 ## [1.0.0] - 2026-09-21
 
 First public release. The demo is live and the screenshots are in `docs/screenshots/`.
