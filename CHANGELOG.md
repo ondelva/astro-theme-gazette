@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.2] - 2026-09-21
+
+### Fixed
+
+- The Lighthouse gate measures each URL three times instead of once. The first URL in the list
+  absorbs the runner's cold start, so a page could fail the 95 threshold with the site unchanged.
+
 ## [1.1.1] - 2026-09-21
 
 ### Fixed

@@ -9,7 +9,7 @@
         "http://localhost/issues/4/",
         "http://localhost/issues/4/bread-before-dawn/"
       ],
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "assertions": {
