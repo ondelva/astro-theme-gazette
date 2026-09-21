@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 
 .lighthouseci/
+
+# wrangler local state
+.wrangler/

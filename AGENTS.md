@@ -63,7 +63,7 @@ rounded cards or shadows.
 | UI strings the theme prints                      | `src/i18n/<locale>.ts`                                                 | Components read them with `useT()`. Never hardcode a word in a component                      |
 | The feed                                         | `src/pages/rss.xml.ts`                                                 | Every published piece of the default language, newest issue first                             |
 | `robots.txt`                                     | `src/pages/robots.txt.ts`                                              | A route, not a static file: the sitemap line has to be absolute                               |
-| Analytics provider and id                        | `src/config.ts` (`analytics`), `src/components/common/Analytics.astro` | `provider: null` renders nothing. Plausible takes the domain, GA4 the measurement id          |
+| Analytics provider and id                        | `src/config.ts` (`analytics`), `src/components/common/Analytics.astro` | `provider: null` renders nothing. Plausible, GA4 or Umami; `host` for a self-hosted one       |
 | The documentation                                | `docs/customization.md`, `docs/content.md`, `docs/deploy.md`           | Every config group and content field is named in one of the three. Change one, change the doc |
 | What CI runs                                     | `.github/workflows/ci.yml`, `lighthouserc.json`                        | Lighthouse pages and the 95+ thresholds live in `lighthouserc.json`                           |
 

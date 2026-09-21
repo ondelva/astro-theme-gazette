@@ -61,6 +61,9 @@ export const features = {
 };
 
 export const analytics = {
-  provider: null as null | 'plausible' | 'ga4',
+  provider: null as null | 'plausible' | 'ga4' | 'umami',
   id: '',
+  // Self-hosted Plausible or Umami: the origin serving the script, no trailing slash.
+  // Empty means the hosted service. GA4 ignores it.
+  host: '',
 };

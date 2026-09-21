@@ -107,12 +107,15 @@ To reword something, edit the dictionary. To publish in another language, copy `
 
 ## Analytics
 
-`src/config.ts`, the `analytics` object. `provider` is `null` (nothing is rendered), `'plausible'`
-or `'ga4'`; `id` is the domain you registered with Plausible, or the GA4 measurement id
-(`G-XXXXXXX`). The snippet lives in `src/components/common/Analytics.astro` — swap in another
-provider's tag there.
+`src/config.ts`, the `analytics` object. `provider` is `null` (nothing is rendered), `'plausible'`,
+`'ga4'` or `'umami'`. `id` is the domain you registered with Plausible, the GA4 measurement id
+(`G-XXXXXXX`), or the Umami website id. The snippet lives in
+`src/components/common/Analytics.astro` — swap in another provider's tag there.
 
-Until both fields are filled in, the built pages load no third-party script at all.
+`host` is for a self-hosted Plausible or Umami: the origin that serves the script, with no trailing
+slash (`https://stats.example.com`). Leave it empty for the hosted service, and for GA4.
+
+Until `provider` and `id` are both filled in, the built pages load no third-party script at all.
 
 ## SEO
 

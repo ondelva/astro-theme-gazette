@@ -35,11 +35,11 @@
   --leader-dot: 2px; /* dot diameter; the browser sets the gap to match */
   --leader-color: var(--muted);
 
-  /* Type. The fonts block in astro.config.mjs defines --font-body and
-     --font-heading when webfonts are loaded; these stacks are the fallback. */
-  --font-body: ui-serif, Georgia, Cambria, 'Times New Roman', serif; /* Literata */
-  --font-heading: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; /* Archivo */
-  --font-display: 'Didot', ui-serif, Georgia, serif; /* Bodoni Moda: covers, feature openers */
+  /* Type. --font-body (Literata), --font-heading (Archivo) and --font-display
+     (Bodoni Moda: covers, feature openers) are defined by the fonts block in
+     astro.config.mjs, together with their fallback stacks. Do not redeclare them
+     here: this file is served after those, so a copy here wins and the webfonts
+     never render. Swap a face in astro.config.mjs, or override in theme.css. */
   --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
   /* Layout */

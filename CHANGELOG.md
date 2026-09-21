@@ -2,6 +2,29 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.0] - 2026-09-21
+
+### Added
+
+- Umami as an analytics provider, next to Plausible and GA4. `analytics.host` points a self-hosted
+  Plausible or Umami at your own origin; leave it empty for the hosted service. The default is
+  still `provider: null`, and a build with nothing set loads no third-party script.
+- One-click deploy buttons for Cloudflare, Netlify and Vercel in the README and in
+  `docs/deploy.md`, with the `SITE_URL` step that follows them.
+
+### Fixed
+
+- The screenshots in `docs/screenshots/` were taken before the webfonts loaded, so they showed
+  the system fallbacks rather than the faces the theme ships. All of them are new.
+- The webfonts were never loaded. `astro.config.mjs` extracted the woff2 files but no `<Font>` put
+  them in the `<head>`, and `tokens.css` redeclared the three font variables as system stacks on
+  top of what the font component sets. Both are fixed, and Archivo 400/500 are preloaded so the
+  swap no longer shifts the page. Until now the cover fell back to Didot on macOS and Georgia
+  elsewhere.
+- `docs/deploy.md` described the Pro edition: a private repository that cannot be forked, and a zip
+  with no Git history. This edition is public, so the section now covers the three routes that
+  apply to it. The `pro-only` marker on `Analytics.astro` is gone as well.
+
 ## [1.0.1] - 2026-09-21
 
 ### Added

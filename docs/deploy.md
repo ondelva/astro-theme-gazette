@@ -18,6 +18,10 @@ and `robots.txt` all print absolute URLs from it.
 npm i -g "$(node -p "require('./package.json').packageManager.split('+')[0]")"
 ```
 
+`engines` sets a floor, not a ceiling, so a host picks the newest major it offers: Vercel prints a
+warning and builds on Node 24. That is fine for this theme. Pin the major in your host's settings
+if you would rather not move with them.
+
 ## Build
 
 ```sh
@@ -31,25 +35,36 @@ host will serve.
 `SITE_URL` overrides `site.url` at build time, which is useful for a staging deploy:
 `SITE_URL=https://staging.example.com pnpm build`.
 
+## One-click deploy
+
+Each button clones this repository into your own GitHub account, builds it and puts it online. You
+confirm a name; there is nothing else to set. The host reads `package.json`, sees Astro and the
+pinned pnpm, and takes `dist/`.
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ondelva/astro-theme-gazette)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ondelva/astro-theme-gazette)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ondelva/astro-theme-gazette)
+
+Then do one thing: set the build environment variable `SITE_URL` to the address you were given (or
+your own domain) and redeploy. Canonical links, the feed, the sitemap and `robots.txt` are absolute,
+and the default in `src/config.ts` is `https://example.com`. Editing `site.url` in your new
+repository instead works the same way.
+
+GitHub Pages has no button of its own — see below.
+
 ## Your own repository
 
-Hosts build from a Git repository you own. The Pro repository is private and cannot be forked, and
-the zip carries no Git history, so push your own copy first.
+Hosts build from a Git repository you own. A button above makes one for you. The other two routes:
 
-If you cloned from GitHub, keep the theme repository as `upstream` so you can pull later releases:
+**Fork this repository.** The fork keeps the link back here, so you can pull later releases.
 
-```sh
-git remote rename origin upstream
-git remote add origin https://github.com/<you>/<your-site>.git
-git push -u origin main
-```
-
-If you started from the zip:
+**Start from the CLI.** `pnpm create astro@latest my-magazine -- --template ondelva/astro-theme-gazette`
+copies the files with no Git history of this repository, so make your own:
 
 ```sh
 git init -b main
 git add -A
-git commit -m "Start from Gazette Pro"
+git commit -m "Start from Gazette"
 git remote add origin https://github.com/<you>/<your-site>.git
 git push -u origin main
 ```
@@ -65,9 +80,18 @@ Build command `pnpm build`, output directory `dist`.
 
 Framework preset Astro, build command `pnpm build`, output directory `dist`.
 
+A new project is private: the build succeeds, and the deployment URL answers with a login screen
+(Deployment Protection, a 302 to Vercel's SSO). Attach your domain, or turn protection off under
+Settings -> Deployment Protection, before you send the link to anyone.
+
 ## Netlify
 
 Build command `pnpm build`, publish directory `dist`.
+
+Two things a first deploy does on its own. `pnpm-workspace.yaml` makes Netlify read the project as
+a monorepo and propose `pnpm --filter <name>... run build`; leave it, it builds correctly. And a
+new site is private by default, so the `.netlify.app` URL answers 401 until you attach a domain or
+make the site public.
 
 ## GitHub Pages
 
