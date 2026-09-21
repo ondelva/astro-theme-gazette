@@ -63,7 +63,7 @@ const authors = (await getCollection('authors')).sort(
               {author.data.name}
             </p>
             <p class="font-prose max-w-content flex-1 text-sm leading-relaxed">{author.data.bio}</p>
-            <p class="font-ui text-muted shrink-0 text-sm tabular-nums">
+            <p class="font-ui text-muted shrink-0 text-sm tabular-nums sm:ms-auto">
               {fmt(t.pieces, { n: counts.get(author.id) ?? 0 })}
             </p>
           </li>

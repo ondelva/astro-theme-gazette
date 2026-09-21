@@ -121,7 +121,7 @@ const recent = await Promise.all(
                   {fmt(t.issueNumber, { n: pad(issue.data.number) })}
                 </span>
                 <span class="font-cover text-lg leading-tight font-bold">{coverLine}</span>
-                <span class="font-ui text-muted ms-auto shrink-0 text-sm tabular-nums max-sm:basis-full max-sm:ps-20">
+                <span class="font-ui text-muted shrink-0 text-sm tabular-nums max-sm:basis-full sm:ms-auto">
                   {fmt(t.pieces, { n: count })} &middot; {formatDate(issue.data.date)}
                 </span>
               </a>

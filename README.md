@@ -3,6 +3,10 @@
 A weekly magazine theme for Astro, published in issues: a cover, a contents page, and room for the
 long pieces. Free and MIT-licensed.
 
+[Live demo](https://gazette-free.ondelva.com) · [Pro demo](https://gazette.ondelva.com)
+
+![Gazette: the cover and the contents of an issue](docs/screenshots/home-light.png)
+
 ## What it is
 
 The unit here is the **issue**, not the article. The home page is this week's cover and its
@@ -55,7 +59,8 @@ See [docs/deploy.md](docs/deploy.md).
 
 ## Free vs Pro
 
-Gazette Pro is the same magazine with the reading apparatus around it.
+Gazette Pro is the same magazine with the reading apparatus around it. See it running at
+[gazette.ondelva.com](https://gazette.ondelva.com).
 
 |                  | Free (this repo)                            | Pro                                                            |
 | ---------------- | ------------------------------------------- | -------------------------------------------------------------- |
@@ -69,6 +74,11 @@ Gazette Pro is the same magazine with the reading apparatus around it.
 | Integrations     | Analytics (Plausible, GA4)                  | + newsletter (Buttondown, Kit), giscus comments                |
 | License          | MIT                                         | Commercial, unlimited end products                             |
 | Support          | GitHub Issues                               | Email (im@ondelva.com), 2 business days                        |
+
+## Screenshots
+
+More in [docs/screenshots/](docs/screenshots/): the cover, an issue and a piece, light and dark,
+desktop and mobile.
 
 ## License
 

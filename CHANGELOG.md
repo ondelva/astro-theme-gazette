@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.0.0] - 2026-09-21
+
+First public release. The demo is live and the screenshots are in `docs/screenshots/`.
+
+### Added
+
+- A live demo at https://gazette-free.ondelva.com, and the Pro demo at https://gazette.ondelva.com.
+- Screenshots of the cover, an issue and a piece, light and dark, desktop and mobile.
+
+### Fixed
+
+- The header stacked a single control on a ragged line of its own below 640px. The links and the
+  controls now wrap as one group, flush left under the nameplate.
+- Issue rows put the piece count and the date at the right edge of a narrow screen. They now sit
+  flush left under the cover line.
+- On the masthead, a contributor's piece count stopped short of the rule it sits on.
+
 ## [0.9.1] - 2026-09-21
 
 ### Fixed

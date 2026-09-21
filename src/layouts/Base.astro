@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import '../styles/global.css';
 import SEO from '../components/common/SEO.astro';
 import Analytics from '../components/common/Analytics.astro';
+import DemoBar from '../components/common/DemoBar.astro';
 import ThemeToggle from '../components/common/ThemeToggle.astro';
 import { features, nav, site } from '../config';
 import { fmt, useT } from '../i18n/t';
@@ -41,6 +42,8 @@ const t = useT();
       {t.skipToContent}
     </a>
 
+    <DemoBar />
+
     <header class="bg-background border-border sticky top-0 z-40 border-b">
       <div class="max-w-wide mx-auto flex flex-wrap items-baseline gap-x-4 gap-y-1 px-4 py-3">
         {nameplate && (
@@ -48,14 +51,19 @@ const t = useT();
             {site.name}
           </a>
         )}
-        <nav aria-label={t.mainNav} class="font-ui ms-auto flex items-baseline gap-4 text-sm">
-          {nav.header.map((item) => (
-            <a class="hover:text-primary no-underline" href={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        {features.darkMode && <ThemeToggle />}
+        {/* One group, so a narrow screen stacks the links and the theme control under the
+            nameplate, flush left like everything else, instead of dropping a single control
+            onto a ragged line of its own. */}
+        <div class="flex w-full flex-wrap items-baseline gap-x-4 gap-y-1 sm:ms-auto sm:w-auto sm:justify-end">
+          <nav aria-label={t.mainNav} class="font-ui flex items-baseline gap-4 text-sm">
+            {nav.header.map((item) => (
+              <a class="hover:text-primary no-underline" href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          {features.darkMode && <ThemeToggle />}
+        </div>
       </div>
     </header>
 

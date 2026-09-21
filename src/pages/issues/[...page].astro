@@ -54,7 +54,7 @@ const pageHref = (n: number) => (n === 1 ? '/issues' : `/issues/page/${n}`);
               {fmt(t.issueNumber, { n: pad(issue.data.number) })}
             </span>
             <span class="font-cover max-w-[38ch] text-xl leading-tight font-bold">{coverLine}</span>
-            <span class="font-ui text-muted ms-auto shrink-0 text-sm tabular-nums max-sm:basis-full max-sm:ps-20">
+            <span class="font-ui text-muted shrink-0 text-sm tabular-nums max-sm:basis-full sm:ms-auto">
               {fmt(t.pieces, { n: count })} &middot; {formatDate(issue.data.date)}
             </span>
           </a>
