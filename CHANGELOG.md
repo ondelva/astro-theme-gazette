@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.1] - 2026-09-21
+
+### Fixed
+
+- CI uploads the Lighthouse report when the performance gate fails. `.lighthouseci` is a dotted
+  directory, and `upload-artifact` skips hidden files by default, so the report that explains a
+  failure was never actually attached.
+
 ## [1.1.0] - 2026-09-21
 
 ### Added

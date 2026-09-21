@@ -29,4 +29,7 @@ jobs:
         with:
           name: lighthouse
           path: .lighthouseci
-          if-no-files-found: ignore
+          # .lighthouseci is a dotted directory, and upload-artifact skips hidden
+          # files by default -- without this the report is silently never uploaded.
+          include-hidden-files: true
+          if-no-files-found: warn
