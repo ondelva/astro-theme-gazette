@@ -1,0 +1,23 @@
+---
+// pro-only. The analytics slot. Nothing renders until analytics.provider and analytics.id are set
+// in src/config.ts, so the default build loads no third-party script.
+import { analytics } from '../../config';
+const { provider, id } = analytics;
+---
+
+{provider === 'plausible' && id && (
+  <script is:inline defer data-domain={id} src="https://plausible.io/js/script.js"></script>
+)}
+{provider === 'ga4' && id && (
+  <Fragment>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+    <script is:inline define:vars={{ id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments); // eslint-disable-line prefer-rest-params -- gtag.js reads the arguments object
+      }
+      gtag('js', new Date());
+      gtag('config', id);
+    </script>
+  </Fragment>
+)}

@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+      - name: Install pnpm from packageManager
+        run: npm i -g "$(node -p "require('./package.json').packageManager.split('+')[0]")"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm lint
+      - run: pnpm check:contrast
+      - run: pnpm build
+      # Thresholds (mobile, 95+ on all four categories) live in lighthouserc.json
+      - run: pnpm dlx @lhci/cli@0.15.1 autorun
+      # Internal links only; external ones are somebody else's uptime
+      - run: pnpm dlx linkinator@8.1.0 dist --recurse --skip '^https?://(?!(localhost|127\.0\.0\.1|\[::1\])[:/])'
+      - if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: lighthouse
+          path: .lighthouseci
+          if-no-files-found: ignore
