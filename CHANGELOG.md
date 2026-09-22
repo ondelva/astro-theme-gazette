@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.4] - 2026-09-22
+
+### Changed
+
+- The author name is spelled in lowercase — `ondelva` — in `LICENSE`, the footer credit, and
+  `docs/customization.md`. Only the spelling changed.
+
 ## [1.1.3] - 2026-09-21
 
 ### Added

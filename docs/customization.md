@@ -20,7 +20,7 @@ to open a component for any of the changes below.
 
 ## Footer credit
 
-The footer carries one line crediting the theme: `Gazette theme by Ondelva`, linking to the
+The footer carries one line crediting the theme: `Gazette theme by ondelva`, linking to the
 theme repository. It is a plain link in `src/layouts/Base.astro` — delete it if you would rather not have it.
 Keeping it is how other people find the theme. Gazette Pro ships without it.
 
