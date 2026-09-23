@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.5] - 2026-09-23
+
+### Fixed
+
+- `CLAUDE.md`, which is a symlink to `AGENTS.md`, is no longer written into the release
+  snapshot. An unzip that ignores the symlink bit — Windows Explorer, 7-Zip — left a broken
+  file where the guide should be.
+
 ## [1.1.4] - 2026-09-22
 
 ### Changed
