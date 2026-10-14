@@ -26,9 +26,10 @@ const { provider, id, host } = analytics;
     <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
     <script is:inline define:vars={{ id }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
+      // On window: define:vars wraps this script in a function, and your own events call gtag().
+      window.gtag = function () {
         dataLayer.push(arguments); // eslint-disable-line prefer-rest-params -- gtag.js reads the arguments object
-      }
+      };
       gtag('js', new Date());
       gtag('config', id);
     </script>
